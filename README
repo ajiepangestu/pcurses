@@ -1,25 +1,24 @@
-PCURSES
--------
+## PCURSES
+
+> **Note**: This is a patched fork of the original pcurses project.
+> See [PATCHES.md](PATCHES.md) for details on applied patches.
+> Upstream: https://github.com/schuay/pcurses
 
 A curses frontend to libalpm.
 
-
-FEATURES
---------
+## FEATURES
 
 Package browsing in a curses frontend, including:
- * regexp filtering and searching any package property
- * customizable colorcoding
- * customizable sorting
- * external command execution with package list string replacements
- * user defined macros and hotkeys
 
+- regexp filtering and searching any package property
+- customizable colorcoding
+- customizable sorting
+- external command execution with package list string replacements
+- user defined macros and hotkeys
 
-QUICK TUTORIAL
---------------
+## QUICK TUTORIAL
 
-Navigation and queue management
--------------------------------
+## Navigation and queue management
 
 The package list and queue can be navigated using the up/down arrows, page
 up/down, and the home and end keys. The tab key switches focus between the
@@ -29,8 +28,7 @@ Adding packages to the queue is done by pressing the right arrow key while the
 package list is focused. Left arrow removes the selected package from the
 queue.
 
-Filtering
----------
+## Filtering
 
 Keybindings are displayed by pressing the 'h' (Help) key in pcurses.
 
@@ -41,8 +39,8 @@ nd!:game
 
 1 is a list of field specifiers. These tell pcurses which fields to search.
 Field specifiers are the highlighted characters in the field names in the info
-pane.  In this example, this means that the Name and Description are searched
-for the phrase 'game'. To keep all _non_matching packages instead, append '!'
+pane. In this example, this means that the Name and Description are searched
+for the phrase 'game'. To keep all \_non_matching packages instead, append '!'
 to the field list..
 
 2 negates the following query, i.e. a filter expression of /nd!:gnome will
@@ -67,14 +65,12 @@ Previous filters are cleared by pressing the 'c' key.
 Pressing the up and down keys while in input mode will scroll through all
 previous history.
 
-Sorting and colorcoding
------------------------
+## Sorting and colorcoding
 
 Colorcoding and sorting use the same syntax as filtering, but only accept a
 single field specifier.
 
-Command execution
------------------
+## Command execution
 
 Command execution can be entered by pressing the '!' key. The token '%p' will
 be replaced by the current contents of the package queue. For example, with a
@@ -93,8 +89,7 @@ A few useful commands could be
 Caution: package infos are not reloaded automatically. After db changes,
 trigger a manual reload by pressing 'r'.
 
-Control commands
-----------------
+## Control commands
 
 Control commands may be used to trigger keyboard shortcut actions such as
 'scroll up' from macros. Available commands are:
@@ -103,8 +98,7 @@ scroll_up, scroll_down, scroll_home, scroll_end, scroll_pageup,scroll_pagedown,
 switch_focus, queue_push, queue_pop, queue_clear, help, quit, reload,
 filter_clear.
 
-Macros
-------
+## Macros
 
 Macros are defined in /etc/pcurses.conf using the syntax 'macroname=command'.
 Macros can be chained by separating them with a comma. A few examples:
@@ -122,23 +116,17 @@ triggered by pressing the corresponding key in pcurses.
 All macros can be executed in pcurses by pressing the '@' key and entering the
 macro name.
 
-
-FURTHER READING
----------------
+## FURTHER READING
 
 For some of the things I've been thinking about or am planning on doing, read
 the CONCEPTS file.
 
-
-BUGS
-----
+## BUGS
 
 Please report all bugs and feature requests to
 https://github.com/schuay/pcurses/issues
 
-
-CONTACT
--------
+## CONTACT
 
 Visit the pcurses github page at https://github.com/schuay/pcurses or write me
 a mail at jakob.gruber@gmail.com
