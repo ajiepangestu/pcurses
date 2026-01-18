@@ -53,13 +53,32 @@ pcurses
 
 ### Navigation
 
-- **Up/Down arrows**: Navigate package list or queue
-- **Page Up/Down**: Scroll by page
-- **Home/End**: Jump to first/last item
+**Package List Navigation:**
+
+- **Up/k**: Move up one item
+- **Down/j**: Move down one item
+- **Page Up**: Scroll up by page
+- **Page Down**: Scroll down by page
+- **Home**: Jump to first item
+- **End**: Jump to last item
+
+**Focus and Queue:**
+
 - **Tab**: Switch focus between package list and queue
 - **Right arrow**: Add selected package to queue
 - **Left arrow**: Remove selected package from queue
-- **h**: Display help
+- **C** (Shift+c): Clear entire queue
+
+**General:**
+
+- **h**: Display help screen
+- **q**: Quit pcurses
+- **r**: Reload package database
+- **c**: Clear all filters
+
+**Hotkeys:**
+
+- **0-9**: Execute user-defined macros (if configured)
 
 ### Filtering
 
@@ -88,7 +107,10 @@ b:2010                  Packages with build date in 2010
 
 **Filter Operations**:
 
-- `/`: Press to enter filter mode
+- `/`: Enter filter mode
+- `n`: Quick filter by name (equivalent to `/n:`)
+- `d`: Quick filter by description (equivalent to `/d:`)
+- `?`: Enter search mode (find and jump to package)
 - `c`: Clear all filters
 - **Up/Down arrows** (in input mode): Navigate filter history
 - **Chaining**: Multiple filters can be applied sequentially
@@ -144,7 +166,7 @@ startup=@sortbyname,@colorbyrepo
 
 ### Control Commands
 
-Control commands for use in macros:
+Control commands can be executed directly by pressing `%` followed by the command name, or used within macros:
 
 - `scroll_up`, `scroll_down`
 - `scroll_home`, `scroll_end`
